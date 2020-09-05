@@ -3,6 +3,7 @@ package com.jbk.test;
 
 import java.io.IOException;
 
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,7 +20,7 @@ public class DownloadsTestCases extends TestBase{
 		downloadsPage.login();
 	}
 	
-	@Test(priority=1)
+	/*@Test(priority=1)
 	public void checkTitleTestCases(){
 		
 		Assert.assertEquals(downloadsPage.checkTitle(childTest), "JavaByKiran | Downloads");
@@ -33,7 +34,7 @@ public class DownloadsTestCases extends TestBase{
 		
 		Assert.assertTrue(downloadsPage.checkColumnHeaderSize());
 		
-	}
+	}*/
 //	
 //	@Test(priority=3)
 //	public void checkAllTableHeadersSpelling(){
@@ -78,12 +79,12 @@ public class DownloadsTestCases extends TestBase{
 //		Assert.assertTrue(downloadsPage.checkListOf64bit());
 //	}
 //	
-//	@Test(priority=10)
-//	public void CheckListOfCommonColumn(){
-//		
-//		Assert.assertTrue(downloadsPage.checkListOfCommon());
-//	}
-//	
+	@Test(priority=10)
+	public void CheckListOfCommonColumn(){
+		
+	Assert.assertTrue(downloadsPage.checkListOfCommon());
+	}
+	
 //	@Test(priority=11)
 //	public void CheckNameImg(){
 //		
