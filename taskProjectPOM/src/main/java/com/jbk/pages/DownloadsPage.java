@@ -288,7 +288,6 @@ public class DownloadsPage extends DownloadPageRepository {
 		Collections.sort(sortedList);
 		System.out.println(sortedList);
 
-		
 		if (sortedList.equals(websiteList)) {
 			isCheckList = true;
 			test1.info( "Sr No List is sorted");
