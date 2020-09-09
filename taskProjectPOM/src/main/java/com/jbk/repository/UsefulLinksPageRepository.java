@@ -22,4 +22,16 @@ public class UsefulLinksPageRepository {
 	@FindBy(xpath = "//tr/td[1]")
 	public List<WebElement> srNo;
 
+
+	@FindBy(id = "email")
+	public static WebElement username;
+
+	@FindBy(id = "password")
+	public static WebElement password;
+	
+	@FindBy(xpath = "//button")
+	public static WebElement loginButton;
+	
+	@FindBy(xpath = "//a[@href='links.html']")
+	public static WebElement usefulLinksPageNavigate;
 }
