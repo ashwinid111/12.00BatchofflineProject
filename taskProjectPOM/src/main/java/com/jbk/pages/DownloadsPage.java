@@ -2,18 +2,14 @@ package com.jbk.pages;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.google.gson.internal.bind.TreeTypeAdapter;
 import com.jbk.repository.DownloadPageRepository;
 import com.jbk.testClasses.Utility;
 
@@ -271,7 +267,38 @@ public class DownloadsPage extends DownloadPageRepository {
 
 	}
 
-	
+	public static boolean sortSrNo(ExtentTest test1) {
+		test1.info("Check Sr Number");
+		websiteList = new ArrayList<String>();
+		System.out.println(Sr.size());
+		boolean isCheckList;
+		for (WebElement srCol : Sr) {
+			String srNo = srCol.getText();
+			websiteList.add(srNo);
+
+		}
+		System.out.println(websiteList);
+
+		ArrayList<String> sortedList = new ArrayList<String>();
+		
+		for (WebElement srCol : Sr) {
+			String srNo = srCol.getText();
+			sortedList.add(srNo);
+		}
+		Collections.sort(sortedList);
+		System.out.println(sortedList);
+
+		
+		if (sortedList.equals(websiteList)) {
+			isCheckList = true;
+			test1.info( "Sr No List is sorted");
+		} else {
+			isCheckList = false;
+			test1.info( "Sr No List is not sorted");
+		}
+		return isCheckList;
+
+	}
 
 	
 

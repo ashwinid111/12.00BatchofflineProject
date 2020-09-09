@@ -97,4 +97,9 @@ public class DownloadsTestCases extends TestBase{
 //		Assert.assertTrue(downloadsPage.checkOfficialLinks());
 //	}
 	
+	@Test(priority=13)
+	public void checkSortSrNo() {
+		downloadsPage.sortSrNo(childTest);
+	}
+	
 }
