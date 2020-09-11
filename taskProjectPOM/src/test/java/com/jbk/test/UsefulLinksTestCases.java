@@ -1,7 +1,6 @@
 package com.jbk.test;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -24,31 +23,26 @@ public class UsefulLinksTestCases extends TestBase {
 
 	@Test(priority = 1)
 	public void checkUsefulLinksSequenceTest() throws Exception {
-		Assert.assertTrue(usefulLinksPage.checkUsefulLinksSequence());
+		Assert.assertTrue(usefulLinksPage.checkUsefulLinksSequence(childTest));
 	}
 
 	@Test(priority = 2)
 	public void checkHeaderLinksTest() throws Exception {
-		Assert.assertTrue(usefulLinksPage.checkHeaderSequence());
+		Assert.assertTrue(usefulLinksPage.checkHeaderSequence(childTest));
 	}
 
 	@Test(priority = 3)
 	public void checkClickLinksTest() throws Exception {
-		Assert.assertTrue(usefulLinksPage.checkClickLinks());
+		Assert.assertTrue(usefulLinksPage.checkClickLinks(childTest));
 	}
 
 	@Test(priority = 4)
 	public void checkClickGOButtonTest() throws Exception {
-		Assert.assertTrue(usefulLinksPage.checkClickGOButton());
+		Assert.assertTrue(usefulLinksPage.checkClickGOButton(childTest));
 	}
 
 	@Test(priority = 5)
 	public void checkSrNoTest() throws Exception {
-		Assert.assertTrue(usefulLinksPage.checkSrNo());
-	}
-
-	@AfterMethod
-	public void tearDown() {
-		driver.close();
+		Assert.assertTrue(usefulLinksPage.checkSrNo(childTest));
 	}
 }
